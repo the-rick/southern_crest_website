@@ -10,7 +10,8 @@ A professional, responsive website for Southern Crest Group - a structured minin
 
 
 southern-crest-website/
-├── index.html
+├── 
+index.html
 ├── README.md
 ├── .gitignore
 ├── css/
