@@ -81,8 +81,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         return;
     }
     
-    // In a real implementation, this would send data to a server
-    // For demo purposes, we'll show a success message
+    // Show success message
     const successMessage = `
         Thank you ${name}!
         
@@ -113,10 +112,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if(window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        header.style.backgroundColor = 'rgba(12, 42, 28, 0.98)';
         header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backgroundColor = 'rgba(12, 42, 28, 0.95)';
         header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
     }
 });
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Listen for scroll events
 window.addEventListener('scroll', animateOnScroll);
 
-// Back to top button (optional enhancement)
+// Back to top button
 function createBackToTopButton() {
     const button = document.createElement('button');
     button.innerHTML = '<i class="fas fa-chevron-up"></i>';
@@ -162,8 +161,8 @@ function createBackToTopButton() {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background-color: var(--secondary);
-        color: var(--dark);
+        background-color: var(--logo-gold);
+        color: var(--logo-dark);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -175,6 +174,9 @@ function createBackToTopButton() {
         transition: all 0.3s ease;
         z-index: 999;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
     
     document.body.appendChild(button);

@@ -12,33 +12,34 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-mountain logo-icon"></i>
-                <div class="logo-text">SOUTHERN <span>CREST</span></div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#commodities">Commodities</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="images/logo_2.png" alt="Southern Crest Group Logo" class="logo-image">
+            <div class="logo-text">SOUTHERN <span>CREST</span> GROUP</div>
         </div>
-    </header>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#commodities">Commodities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
+            <!-- <div class="hero-tagline">TRUSTED.PROVEN.RELIABLE</div> -->
             <h1>Structured Mining & Commodities Partner</h1>
-            <p>Southern Crest Group (SCG) is a Southern Africa–focused mining and commodities company specialising in chrome and strategic minerals. With close to 20 years of industry experience, SCG operates on strong ethical principles, delivering risk-managed off-take solutions supported by sound governance, compliance, and long-term partnerships.</p>
+            <p>Southern Crest Group (SCG) is a Southern Africa focused mining and commodities company specialising in chrome and strategic minerals. With close to 20 years of industry experience, SCG operates on strong ethical principles, delivering risk-managed off-take solutions supported by sound governance, compliance, and long-term partnerships.</p>
             <a href="#contact" class="cta-button">Request Structured Off-Take Discussion</a>
         </div>
     </section>
@@ -80,15 +81,15 @@
                 <h3>Markets Served</h3>
                 <div class="market-flags">
                     <div class="flag">
-                        <i class="fas fa-globe-africa flag-icon"></i>
+                        <div class="flag-icon flag-southern-africa"><i class="fas fa-globe-africa"></i></div>
                         <span>Southern Africa</span>
                     </div>
                     <div class="flag">
-                        <i class="fas fa-flag flag-icon" style="color: #de2910;"></i>
+                        <div class="flag-icon flag-china">🇨🇳</div>
                         <span>China</span>
                     </div>
                     <div class="flag">
-                        <i class="fas fa-flag flag-icon" style="color: #d52b1e;"></i>
+                        <div class="flag-icon flag-russia">🇷🇺</div>
                         <span>Russia</span>
                     </div>
                 </div>
@@ -198,13 +199,13 @@
                 <div class="commodity-focus">
                     <h3>Primary Commodity Focus</h3>
                     <div class="commodity-item">
-                        <i class="fas fa-gem" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                        <i class="fas fa-gem commodity-icon"></i>
                         <h4>Chrome</h4>
                         <p>Specialized expertise in chrome ore and concentrates across Southern African markets.</p>
                     </div>
                     
-                    <h3 style="margin-top: 30px;">Operating Regions</h3>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
+                    <h3 class="regions-title">Operating Regions</h3>
+                    <ul class="regions-list">
                         <li>Southern Africa</li>
                         <li>International markets including China and Russia</li>
                     </ul>
@@ -214,19 +215,19 @@
                     <h3>Partnership Model</h3>
                     <div class="partners-grid">
                         <div class="partner-item">
-                            <i class="fas fa-hard-hat"></i>
+                            <i class="fas fa-hard-hat partner-icon"></i>
                             <h4>Mining Partners</h4>
                         </div>
                         <div class="partner-item">
-                            <i class="fas fa-truck-loading"></i>
+                            <i class="fas fa-truck-loading partner-icon"></i>
                             <h4>Logistics & Transport Partners</h4>
                         </div>
                         <div class="partner-item">
-                            <i class="fas fa-handshake"></i>
+                            <i class="fas fa-handshake partner-icon"></i>
                             <h4>Off-Takers & Buyers</h4>
                         </div>
                         <div class="partner-item">
-                            <i class="fas fa-tools"></i>
+                            <i class="fas fa-tools partner-icon"></i>
                             <h4>Mining Machinery & Equipment Partners</h4>
                         </div>
                     </div>
@@ -241,37 +242,62 @@
             <div class="section-title">
                 <h2>Contact Us</h2>
             </div>
-            
+
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-user contact-icon"></i>
-                        <div>
-                            <h3>Sifiso Ndlovu – Director & Partner</h3>
-                            <p><i class="fas fa-phone"></i> Tel: 081 523 3936</p>
-                            <p><i class="fas fa-envelope"></i> Email: Fistoz10@gmail.com</p>
+                <!-- Team Pictures Section -->
+                <div class="team-pictures-section">
+                    <div class="team-pictures-grid">
+                        <!-- Sifiso Ndlovu -->
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="images/sifiso.jpg" alt="Sifiso Ndlovu" class="person-photo">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sifiso Ndlovu</h3>
+                                <p class="member-qualification">BCom PGDip, UCT</p>
+                                <p class="member-title">Director & Partner</p>
+                                <div class="member-contact">
+                                    <p><i class="fas fa-phone"></i> Tel: 081 523 3936</p>
+                                    <p><i class="fas fa-envelope"></i> Email: Fistoz10@gmail.com</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <i class="fas fa-user contact-icon"></i>
-                        <div>
-                            <h3>Nomthandazo Msimango – Director & Partner</h3>
-                            <p><i class="fas fa-phone"></i> Tel: 060 800 7178</p>
-                            <p><i class="fas fa-envelope"></i> Email: Nomthi87@gmail.com</p>
+
+                        <!-- Nomthandazo Msimango -->
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="images/nomthandazo.jpg" alt="Nomthandazo Msimango" class="person-photo">
+                            </div>
+                            <div class="member-info">
+                                <h3>Nomthandazo Msimango</h3>
+                                <p class="member-qualification">TBC</p>
+                                <p class="member-title">Director & Partner</p>
+                                <div class="member-contact">
+                                    <p><i class="fas fa-phone"></i> Tel: 060 800 7178</p>
+                                    <p><i class="fas fa-envelope"></i> Email: Nomthi87@gmail.com</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <i class="fas fa-user contact-icon"></i>
-                        <div>
-                            <h3>Mandla Nkambule – Director & Partner</h3>
-                            <p><i class="fas fa-phone"></i> Tel: +27 73 390 1615</p>
-                            <p><i class="fas fa-envelope"></i> Email: Mandla.Nkambule03@gmail.com</p>
+
+                        <!-- Mandla Nkambule -->
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="images/mandla.jpg" alt="Mandla Nkambule" class="person-photo">
+                            </div>
+                            <div class="member-info">
+                                <h3>Mandla Nkambule (CIA)</h3>
+                                <p class="member-qualification">MPhil - Internal Auditing</p>
+                                <p class="member-title">Director & Partner</p>
+                                <div class="member-contact">
+                                    <p><i class="fas fa-phone"></i> Tel: +27 73 390 1615</p>
+                                    <p><i class="fas fa-envelope"></i> Email: Mandla.Nkambule03@gmail.com</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Contact Form -->
                 <div class="contact-form">
                     <h3>Request Structured Off-Take Discussion</h3>
                     <form id="contactForm">
@@ -279,28 +305,28 @@
                             <label for="name">Full Name</label>
                             <input type="text" id="name" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company">Company</label>
                             <input type="text" id="company" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="interest">Interest / Commodity</label>
                             <input type="text" id="interest" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" placeholder="Please provide details about your off-take requirements..."></textarea>
                         </div>
-                        
-                        <button type="submit" class="cta-button" style="width: 100%;">Submit Request</button>
+
+                        <button type="submit" class="cta-button contact-submit">Submit Request</button>
                     </form>
                 </div>
             </div>
@@ -313,13 +339,14 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">SOUTHERN <span>CREST</span> GROUP</div>
+                    <div class="footer-tagline">TRUSTED.PROVEN.RELIABLE</div>
                     <p>Structured Mining & Commodities Partner</p>
-                    <p style="margin-top: 20px;">Professional mining and commodities trading focused on chrome and strategic minerals in Southern Africa.</p>
+                    <p class="footer-description">Professional mining and commodities trading focused on chrome and strategic minerals in Southern Africa.</p>
                 </div>
                 
                 <div>
                     <h3>Quick Links</h3>
-                    <ul style="list-style: none; margin-top: 15px;">
+                    <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
@@ -330,14 +357,14 @@
                 
                 <div>
                     <h3>Markets Served</h3>
-                    <ul style="list-style: none; margin-top: 15px;">
+                    <ul class="markets-list">
                         <li>Southern Africa</li>
                         <li>China</li>
                         <li>Russia</li>
                     </ul>
                     
-                    <h3 style="margin-top: 20px;">Core Values</h3>
-                    <p style="margin-top: 10px;">Integrity, Discipline, Reliability, Professionalism, Long-term Partnerships</p>
+                    <h3 class="values-title">Core Values</h3>
+                    <p class="values-description">Integrity, Discipline, Reliability, Professionalism, Long-term Partnerships</p>
                 </div>
             </div>
             
