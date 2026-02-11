@@ -298,36 +298,61 @@
                 </div>
 
                 <!-- Contact Form -->
+                <!-- Contact Form with AJAX submission to FormSubmit.co -->
                 <div class="contact-form">
-                    <h3>Request Structured Off-Take Discussion</h3>
-                    <form id="contactForm">
+                <h3>Request Structured Off-Take Discussion</h3>
+
+                <!-- Form Container -->
+                <div id="formContainer">
+                    <form id="contactForm" action="https://formsubmit.co/nmandlana1072@gmail.com" method="POST">
+                        <!-- FormSubmit.co configuration -->
+                        <input type="hidden" name="_subject" value="New Off-Take Discussion Request - Southern Crest Group">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_next" value=""> <!-- Empty to prevent redirect -->
+                        <input type="text" name="_honey" style="display:none">
+
+                        <!-- Form fields -->
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="Full Name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="Email" required>
                         </div>
 
                         <div class="form-group">
                             <label for="company">Company</label>
-                            <input type="text" id="company" required>
+                            <input type="text" id="company" name="Company" required>
                         </div>
 
                         <div class="form-group">
                             <label for="interest">Interest / Commodity</label>
-                            <input type="text" id="interest" required>
+                            <input type="text" id="interest" name="Interest / Commodity" required>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" placeholder="Please provide details about your off-take requirements..."></textarea>
+                            <textarea id="message" name="Message" placeholder="Please provide details about your off-take requirements..." required></textarea>
                         </div>
 
                         <button type="submit" class="cta-button contact-submit">Submit Request</button>
                     </form>
+                </div>
+
+                <!-- Thank You Message (Hidden by default) -->
+                <div id="thankYouMessage" style="display: none; text-align: center; padding: 40px 20px;">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--logo-gold); margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--logo-dark); font-size: 1.8rem; margin-bottom: 15px;">Thank You!</h3>
+                    <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6;">
+                        Your structured off-take discussion request has been submitted successfully.<br>
+                        A Southern Crest Group representative will contact you within 24-48 hours.
+                    </p>
+                    <button id="resetFormBtn" class="cta-button" style="background-color: var(--logo-dark); color: white; border-color: var(--logo-dark);">
+                        <i class="fas fa-redo-alt" style="margin-right: 8px;"></i>Submit Another Request
+                    </button>
                 </div>
             </div>
         </div>

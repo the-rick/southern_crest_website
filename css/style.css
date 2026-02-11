@@ -922,3 +922,28 @@ footer a:hover {
         font-size: 0.95rem;
     }
 }
+
+
+/* Error message styling */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    border-left: 4px solid #c62828;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

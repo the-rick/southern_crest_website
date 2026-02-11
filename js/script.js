@@ -59,51 +59,69 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Form submission handling
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission
     
-    // Get form data
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const company = document.getElementById('company').value;
-    const interest = document.getElementById('interest').value;
-    const message = document.getElementById('message').value;
+    const form = this;
+    const formData = new FormData(form);
+    const formContainer = document.getElementById('formContainer');
+    const thankYouMessage = document.getElementById('thankYouMessage');
     
-    // Basic validation
-    if (!name || !email || !company || !interest) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    // Show success message
-    const successMessage = `
-        Thank you ${name}!
+    // Submit form via AJAX
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // NO POPUP - Just hide form and show thank you message
+            formContainer.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+        } else {
+            // Show error message inline (still no popup)
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.cssText = 'background-color: #ffebee; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 15px; text-align: center;';
+            errorDiv.textContent = 'There was a problem submitting your form. Please try again.';
+            form.parentNode.insertBefore(errorDiv, form.nextSibling);
+            
+            // Remove error after 5 seconds
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Show error message inline (no popup)
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.cssText = 'background-color: #ffebee; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 15px; text-align: center;';
+        errorDiv.textContent = 'Network error. Please check your connection and try again.';
+        form.parentNode.insertBefore(errorDiv, form.nextSibling);
         
-        Your structured off-take discussion request has been submitted.
-        
-        Details:
-        - Company: ${company}
-        - Interest: ${interest}
-        - Email: ${email}
-        
-        A Southern Crest Group representative will contact you within 24-48 hours.
-    `;
+        // Remove error after 5 seconds
+        setTimeout(() => errorDiv.remove(), 5000);
+    });
+});
+
+// Reset form button handler
+document.getElementById('resetFormBtn').addEventListener('click', function() {
+    const formContainer = document.getElementById('formContainer');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const form = document.getElementById('contactForm');
     
-    alert(successMessage);
+    // Reset the form
+    form.reset();
     
-    // Reset form
-    this.reset();
+    // Hide thank you message, show form
+    thankYouMessage.style.display = 'none';
+    formContainer.style.display = 'block';
     
-    // Scroll to top of contact section
-    const contactSection = document.getElementById('contact');
+    // Scroll back to the form
+    const contactForm = document.querySelector('.contact-form');
     window.scrollTo({
-        top: contactSection.offsetTop - 80,
+        top: contactForm.offsetTop - 100,
         behavior: 'smooth'
     });
 });
