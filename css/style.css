@@ -162,9 +162,7 @@ nav a:hover::after {
 
 /* Hero Section - Updated with new background and text */
 .hero {
-    background: 
-        linear-gradient(rgba(12, 42, 28, 0.85), rgba(12, 42, 28, 0.9)),
-        url('../images/logo_3.png') center/30% no-repeat;
+    background: linear-gradient(rgba(12, 42, 28, 0.85), rgba(12, 42, 28, 0.9));
     color: white;
     padding: 180px 0 100px;
     text-align: center;
